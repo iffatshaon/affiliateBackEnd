@@ -3,7 +3,7 @@ from io import BytesIO
 from fastapi.responses import StreamingResponse
 
 def getCaptcha():
-    image = ImageCaptcha(width = 200, height = 90)
+    image = ImageCaptcha(width = 250, height = 90, fonts=['assets/fonts/grafity.ttf','assets/fonts/aachen.ttf'])
     captcha_text = 'abcde' 
     data = image.generate(captcha_text)
     captcha_image = BytesIO(data.read())
